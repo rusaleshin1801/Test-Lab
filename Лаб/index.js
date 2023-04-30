@@ -1,6 +1,6 @@
 let numbers = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]; // массив цифр от 9 до 0
 let result = 200; // результат, который нужно получить
-let expression = ""; // строка с выражением
+let expressions = []; // массив строк с выражениями
 
 // перебираем все возможные комбинации
 for (let i = 0; i < Math.pow(3, numbers.length - 1); i++) {
@@ -24,11 +24,11 @@ for (let i = 0; i < Math.pow(3, numbers.length - 1); i++) {
     }
   }
 
-  // проверяем, если сумма равна результату, то выводим выражение
+  // проверяем, если сумма равна результату, то добавляем выражение в массив
   if (sum === result) {
-    expression = exp + "=" + result;
-    break;
+    expressions.push(exp + "=" + result);
   }
 }
 
-console.log(expression);
+// выводим все найденные выражения
+console.log(expressions);
